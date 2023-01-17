@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="calculator">
+                <input type="text" placeholder="0" id="output">
+                <button class="btn" onclick="ClearInput()">C</button>
+                <button class="btn" onclick="DelInput()">X</button>
+                <button class="btn" onclick="Calculator('%')">%</button>
+                <button class="btn" onclick="Calculator('/')">/</button>
+
+                <button class="btn" onclick="Calculator('7')">7</button>
+                <button class="btn" onclick="Calculator('8')">8</button>
+                <button class="btn" onclick="Calculator('9')">9</button>
+                <button class="btn" onclick="Calculator('*')">*</button>
+
+                <button class="btn" onclick="Calculator('4')">4</button>
+                <button class="btn" onclick="Calculator('5')">5</button>
+                <button class="btn" onclick="Calculator('6')">6</button>
+                <button class="btn" onclick="Calculator('+')">+</button>
+               
+                <button class="btn" onclick="Calculator('1')">1</button>
+                <button class="btn" onclick="Calculator('2')">2</button>
+                <button class="btn" onclick="Calculator('3')">3</button>
+                <button class="btn" onclick="Calculator('-')">-</button>
+
+                <button class="btn" onclick="Calculator('0')">0</button>
+                <button class="btn" onclick="Calculator('.')">.</button>
+                <button class="btn" onclick="equal()">=</button>
+               
+                
+              
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        function ClearInput(){
+            document.getElementById('output').value = "";
+        }
+        function DelInput(){
+           var a =  document.getElementById('output').value;
+           var b = a.slice(0,-1);
+           document.getElementById('output').value = b;
+        }
+        function Calculator(NewValue){
+            document.getElementById('output').value += NewValue;
+           
+        }
+        function equal(){
+           var a =  document.getElementById('output').value;
+           var b = eval(a);
+           document.getElementById('output').value = b;
+        }
+      
+    </script>
+</body>
+</html>
